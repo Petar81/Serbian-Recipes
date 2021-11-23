@@ -18,6 +18,32 @@ class MealItem extends StatelessWidget {
     required this.affordability,
   }) : super(key: key);
 
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.simple:
+        return 'Simple';
+      case Complexity.challenging:
+        return 'Challenging';
+      case Complexity.hard:
+        return 'Hard';
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.affordable:
+        return 'Affordable';
+      case Affordability.pricey:
+        return 'Pricey';
+      case Affordability.luxurious:
+        return 'Expensive';
+      default:
+        return 'Unknown';
+    }
+  }
+
   void selectMeal() {}
 
   @override
@@ -70,12 +96,35 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  const Icon(Icons.schedule),
-                  const SizedBox(
-                    width: 20,
+                  Row(
+                    children: <Widget>[
+                      const Icon(Icons.schedule),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Text('$duration min'),
+                    ],
                   ),
-                  Text('$duration min'),
+                  Row(
+                    children: <Widget>[
+                      const Icon(Icons.verified_outlined),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Text(complexityText),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      const Icon(Icons.monetization_on_outlined),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Text(affordabilityText),
+                    ],
+                  ),
                 ],
               ),
             )
