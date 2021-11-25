@@ -37,7 +37,9 @@ class MainDrawer extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/');
+            },
           ),
           ListTile(
             leading: const Icon(
