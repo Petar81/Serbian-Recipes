@@ -106,6 +106,7 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.pink,
         child: Icon(
           isFavourite(mealId) ? Icons.star : Icons.star_border,
         ),
