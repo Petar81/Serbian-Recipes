@@ -1,6 +1,4 @@
-# Meals App
-
-My Favourite Serbian Recipes
+# Serbian Recipes
 
 ## Serbian cuisine at its best
 
